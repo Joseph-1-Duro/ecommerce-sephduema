@@ -8,3 +8,14 @@ Read `docs/README.md` inside that installed package first, then read the relevan
 
 This block is written and re-added by `turbo` before repository-scoped commands when an AI agent is detected. In the Turborepo source repository, its template is defined in `crates/turborepo-cli/src/cli/agent_guidance.rs`. Removing the managed block while updates are enabled means a later qualifying invocation will add it again. Set `"agentGuidance": true` in the root `turbo.json` or `turbo.jsonc` to opt in; this does not remove an existing block. Keep the block committed with your work to avoid an uncommitted change on the next agent invocation.
 <!-- END:turborepo-agent-rules -->
+
+# Project conventions
+
+- Use pnpm for dependency management and running project scripts.
+- Use TypeScript with strict type checking (`strict: true`).
+- Use Zod for schema definitions and validation. Infer TypeScript types from Zod schemas to keep types and validation in sync.
+
+# Git workflow
+
+- Follow [GIT_CONVENTIONS.md](GIT_CONVENTIONS.md) and use the installed `git-commit` skill when making commits.
+- Start each task on a new branch with one objective agreed in the task discussion. Never commit or push directly to `main`; integrate changes through a pull request.
